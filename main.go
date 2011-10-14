@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-  client, err := xmpp.NewClient("talk.google.com", "xmpp.chatterbox@gmail.com", "XXX")
+  client, err := xmpp.NewClient("talk.google.com", "andrade.andrey@gmail.com", "xxx")
 
   if err != nil {
     fmt.Printf("Failed due to: %s\n", err)
@@ -19,7 +19,7 @@ func main() {
       log("Got a message from %s to %s: %s\n", msg.From(), msg.To(), msg.Body())
     })
 
-    client.SendChat("ratnikov@gmail.com", "Hello world!")
+    client.SendChat("nilton.kummer@gmail.com", "Hello world!")
 
     client.Loop()
   }

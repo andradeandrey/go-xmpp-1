@@ -76,7 +76,7 @@ func (client *Client) startTls() {
   var plain_conn net.Conn
   var err os.Error
 
-  if plain_conn, err = net.Dial("tcp", "", client.hostname + ":5222"); err != nil {
+  if plain_conn, err = net.Dial("tcp", client.hostname + ":5222"); err != nil {
     die("Failed to establish plain connection: %s", err)
   }
 
@@ -90,7 +90,7 @@ func (client *Client) startTls() {
   log("Read: %s", mustRead(plain_conn))
 
   // assuming the server asked to proceed
-  if client.conn, err = tls.Dial("tcp", "", client.hostname + ":https", nil); err != nil {
+  if client.conn, err = tls.Dial("tcp", client.hostname + ":https", nil); err != nil {
     die("Failed to establish tls connection (%s)", err)
   }
 }
